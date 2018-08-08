@@ -5,6 +5,17 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'app';
+  ultimoId = 0;
+  nome = 'Conchita';
+  adicionado = false;
+  pessoas = [];
+
+  adicionar() {
+    console.log(`Adicionado: ${this.nome}`);
+    this.adicionado = true;
+    this.pessoas.push({id: ++this.ultimoId,
+                       nome : this.nome});
+  }
 }
