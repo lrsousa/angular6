@@ -14,8 +14,17 @@ import { Component, Input } from '@angular/core';
 export class PessoaCardComponent {
   @Input() pessoa: any;
 
+  //getClassesCss() {
+  //  return ['badge' , 'badge-default'];
+  //}
+
+  isAdmin() {
+    return this.pessoa.nome.startsWith('C');
+  }
+
   getEstilosCartao() {
     return { 'border-width.px': this.pessoa.id,
              backgroundColor: this.pessoa.id % 2 == 0 ? 'lightblue' : 'lightgreen' };
   }
+
 }
