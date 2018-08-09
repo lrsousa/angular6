@@ -13,4 +13,9 @@ import { Component, Input } from '@angular/core';
 })
 export class PessoaCardComponent {
   @Input() pessoa: any;
+
+  getEstilosCartao() {
+    return { 'border-width.px': this.pessoa.id,
+             backgroundColor: this.pessoa.id % 2 == 0 ? 'lightblue' : 'lightgreen' };
+  }
 }
